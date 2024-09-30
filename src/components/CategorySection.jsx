@@ -1,16 +1,20 @@
 import React from "react";
 import CategoryButton from "./CategoryButton";
 import { Container } from "./Container";
+import useCategoryStore from "../store/useCategoryStore";
 
 function CategorySection() {
   const title = "Product Categories";
 
-  const categories = [
-    "electronics",
-    "jewelery",
-    "men's clothing",
-    "women's clothing",
-  ];
+  // const categories = [
+  //   "electronics",
+  //   "jewelery",
+  //   "men's clothing",
+  //   "women's clothing",
+  // ];
+
+  const { categories } = useCategoryStore();
+  // console.log(categories)
 
   return (
     <div id="category-section" className="p-5">
@@ -22,12 +26,11 @@ function CategorySection() {
             e.currentTarget.scrollLeft += e.deltaY; // This makes vertical mouse scrolling act horizontally.
           }}
         >
-          <CategoryButton categoryName="all" current={true} />
+          {/* <CategoryButton categoryName="all" current={true} /> */}
           {categories.map((category) => (
             <CategoryButton
-              key={category}
-              categoryName={category}
-              current={false}
+              key={category.id}
+              category={category}
             />
           ))}
         </div>

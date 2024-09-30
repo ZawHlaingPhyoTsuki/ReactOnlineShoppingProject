@@ -1,10 +1,12 @@
 import React from "react";
 import ProductCard from "./ProductCard";
 import { Container } from "./Container";
-import products from "../data/products";
+import useProductStore from "../store/useProductStore";
+// import products from "../data/products";
 
 function ProductSection() {
   
+  const { products } = useProductStore();
 
   return (
     <section className="px-5 mb-5">
