@@ -16,9 +16,12 @@ const ProductCard = ({
 }) => {
   const { carts, addCart } = useCartStore();
 
+  // if product already added in cart, show already added toast
   const handleAddedBtn = (event) => {
     event.stopPropagation(), toast.success("Already added");
   };
+
+  // if pressed add to cart, prevent from going to ProductDetail Page
   const handleAddCart = (event) => {
     event.stopPropagation();
     const newCart = {

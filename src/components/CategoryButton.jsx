@@ -1,7 +1,7 @@
 import React from "react";
 import useCategoryStore from "../store/useCategoryStore";
 
-function CategoryButton({category:{id,name, isActive}}) {
+function CategoryButton({category:{id, name, isActive}}) {
   // console.log(category.name, category.isActive);
 
   const { activeCategory } = useCategoryStore();
